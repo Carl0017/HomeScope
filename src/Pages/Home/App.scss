@@ -1,0 +1,74 @@
+@import "../../Styles/colors";
+@import "../../Styles/fonts";
+@import "../../Styles/reuseable";
+
+.headTag {
+  @include flex(row, 0, space-between);
+  background: $brandPrimary;
+  padding: 0.5rem 2rem;
+  h4 {
+    @include Poppins(500, normal);
+    font-size: 0.8rem;
+    text-transform: capitalize;
+
+    a{
+      color: $dark;
+    }
+  }
+
+  .closeBtn {
+    @include flex(row, 0, center);
+    background: #c5c3c3;
+    border-radius: 10rem;
+    padding: 0.2rem;
+    svg {
+      color: $dark;
+      height: 0.8rem;
+      width: 0.8rem;
+    }
+  }
+}
+
+header {
+  @include flex(row, 3rem, center);
+
+  nav {
+    @include flex(row, 0, space-between);
+    width: 100%;
+    padding: 1rem 8rem;
+    @include Poppins(400, normal);
+
+    ul {
+      @include flex(row, 1rem, space-between);
+      li {
+        list-style: none;
+        font-weight: 500;
+        a {
+          text-decoration: none;
+          color: $dark;
+        }
+      }
+    }
+
+    button {
+      background: #131313;
+      @include Poppins(400, normal);
+      color: #fff;
+      border: none;
+      @include flex(row, 0.5rem, center);
+      padding: 0.6rem;
+      border-radius: 10rem;
+
+      span {
+        @include flex(row, 0, center);
+        background: #fff;
+        color: #000;
+        border-radius: 10rem;
+        svg {
+          width: 1.3rem;
+          height: 1.3rem;
+        }
+      }
+    }
+  }
+}
