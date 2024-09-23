@@ -11,7 +11,7 @@
     font-size: 0.8rem;
     text-transform: capitalize;
 
-    a{
+    a {
       color: $dark;
     }
   }
@@ -29,45 +29,176 @@
   }
 }
 
-header {
-  @include flex(row, 3rem, center);
+.pageWrapper {
+  @include flex(column, 2rem, center);
+  padding: 1rem 8rem;
 
-  nav {
-    @include flex(row, 0, space-between);
+  header {
+    @include flex(row, 3rem, center);
     width: 100%;
-    padding: 1rem 8rem;
-    @include Poppins(400, normal);
 
-    ul {
-      @include flex(row, 1rem, space-between);
-      li {
-        list-style: none;
-        font-weight: 500;
-        a {
-          text-decoration: none;
-          color: $dark;
+    nav {
+      @include flex(row, 0, space-between);
+      width: 100%;
+      padding: 1rem 8rem;
+      @include Poppins(400, normal);
+
+      ul {
+        @include flex(row, 1rem, space-between);
+        li {
+          list-style: none;
+          font-weight: 500;
+          a {
+            text-decoration: none;
+            color: $dark;
+          }
+        }
+      }
+
+      button {
+        background: $dark;
+        @include Poppins(400, normal);
+        color: #fff;
+        border: none;
+        @include flex(row, 0.5rem, center);
+        padding: 0.6rem;
+        border-radius: 10rem;
+
+        span {
+          @include flex(row, 0, center);
+          background: #fff;
+          color: #000;
+          border-radius: 10rem;
+          svg {
+            width: 1.3rem;
+            height: 1.3rem;
+          }
         }
       }
     }
+  }
 
-    button {
-      background: #131313;
+  .mainCon {
+    @include flex(column, 1rem, flex-end);
+    align-items: flex-start;
+    background-image: url("../../assets/bgImg.svg");
+    background-position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    //margin: 1rem 8rem;
+    padding: 8rem 8rem;
+    border-radius: 1rem;
+    height: 80vh;
+    color: #fff;
+
+    h2 {
+      @include Montserrat(700);
+      font-size: 3.3rem;
+      width: 60%;
+    }
+
+    p {
       @include Poppins(400, normal);
-      color: #fff;
-      border: none;
-      @include flex(row, 0.5rem, center);
-      padding: 0.6rem;
-      border-radius: 10rem;
+      width: 50%;
+    }
 
-      span {
-        @include flex(row, 0, center);
+    .buttonWrapper {
+      @include flex(row, 0.7rem, start);
+
+      .filled {
         background: #fff;
-        color: #000;
+        @include Poppins(600, normal);
+        color: $dark;
+        border: none;
+        @include flex(row, 0.5rem, center);
+        padding: 0.6rem;
         border-radius: 10rem;
-        svg {
-          width: 1.3rem;
-          height: 1.3rem;
+        transition: 0.3s ease-in-out;
+
+        span {
+          @include flex(row, 0, center);
+          background: $brandPrimary;
+          color: $dark;
+          border-radius: 10rem;
+          svg {
+            width: 1.3rem;
+            height: 1.3rem;
+          }
         }
+
+        &:hover {
+          background: transparent;
+          color: #fff;
+          border: 2px solid #fff;
+          padding: 0.5rem;
+
+          span {
+            background: #fff;
+          }
+        }
+      }
+
+      .outline {
+        background: transparent;
+        @include Poppins(600, normal);
+        color: #fff;
+        border: 2px solid #fff;
+        @include flex(row, 0.5rem, center);
+        padding: 0.5rem;
+        border-radius: 10rem;
+        transition: 0.3s ease-in-out;
+
+        span {
+          @include flex(row, 0, center);
+          background: #fff;
+          color: $dark;
+          border-radius: 10rem;
+          svg {
+            width: 1.3rem;
+            height: 1.3rem;
+          }
+        }
+
+        &:hover {
+          background: #fff;
+          color: #000;
+
+          span {
+            background: $brandPrimary;
+          }
+        }
+      }
+    }
+  }
+
+  .ratings {
+    width: fit-content;
+    //margin: 1rem 8rem;
+    @include flex(row wrap, 2rem, center);
+    @include Poppins(500, normal);
+    background: #ebeaea;
+    text-align: center;
+    border-radius: 1rem;
+
+    .rateCard {
+      padding: 1.5rem;
+      #head {
+        color: $dark;
+        font-weight: 700;
+      }
+      span {
+        color: #424242;
+      }
+    }
+
+    .active {
+      background: $dark;
+      border-radius: 1rem;
+      #head {
+        color: #fff;
+      }
+      span {
+        color: #afafaf;
       }
     }
   }

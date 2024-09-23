@@ -40,7 +40,7 @@ function Navbar() {
             <li>
               <Link to="#">Services</Link>
             </li>
-          </ul>  
+          </ul>
 
           <button>
             Contact Us
@@ -58,30 +58,52 @@ function App() {
   return (
     <>
       <HeadTag />
-      <Navbar />
+      <div className="pageWrapper">
+        <Navbar />
 
-      <div className="mainCon">
-        <h2>
-          Discover Your Dream Property with HomeScope
-        </h2>
-        <p>
-          This exclusive residential complex offers 13 living units with carefully designed and optimally tailored floor plans.
-        </p>
+        <div className="mainCon">
+          <h2>Discover Your Dream Property With HomeScope</h2>
+          <p>
+            This exclusive residential complex offers 13 living units with
+            carefully designed and optimally tailored floor plans.
+          </p>
 
-        <div className="buttonWrapper">
-          <button>
-           Browse Properties
-           <span>
-              <ArrowRight />
-            </span>
-          </button>
+          <div className="buttonWrapper">
+            <button className="filled">
+              Browse Properties
+              <span>
+                <ArrowRight />
+              </span>
+            </button>
 
-          <button>
-          Learn More
-           <span>
-              <ArrowRight />
-            </span>
-          </button>
+            <button className="outline">
+              Learn More
+              <span>
+                <ArrowRight />
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div className="ratings">
+          <div className="rateCard">
+            <div id="head">5+</div>
+            <span>Years In The Business</span>
+          </div>
+          <div className="rateCard">
+            <div id="head">9k+</div>
+            <span>Premium Properties</span>
+          </div>
+
+          <div className="rateCard active">
+            <div id="head">5k+</div>
+            <span>Happy Customers</span>
+          </div>
+
+          <div className="rateCard">
+            <div id="head">58+</div>
+            <span>Awards Won</span>
+          </div>
         </div>
       </div>
     </>
