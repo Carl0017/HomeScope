@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
 import { Link } from "react-router-dom";
-import { ArrowBigRight, ArrowRight, X } from "lucide-react";
+import { ArrowBigRight, ArrowRight, Building, ChartCandlestick, X } from "lucide-react";
 
 function HeadTag() {
   return (
@@ -50,6 +50,18 @@ function Navbar() {
           </button>
         </nav>
       </header>
+    </>
+  );
+}
+
+function WeCard(props) {
+  return (
+    <>
+      <div className="weDoCard">
+        <span>{props.icon}</span>
+        <h2>{props.title}</h2>
+        <p>{props.info}</p>
+      </div>
     </>
   );
 }
@@ -103,6 +115,41 @@ function App() {
           <div className="rateCard">
             <div id="head">58+</div>
             <span>Awards Won</span>
+          </div>
+        </div>
+
+        <div className="whatWeDo">
+          <h2>What we do ?</h2>
+          <p>
+            We are a real estate firm with over 5+ years of expertise, and our
+            main goal is to provide amazing locations to our partners and
+            clients. Within the luxury real estate market, our agency offers
+            customized solutions.
+          </p>
+
+          <div className="weDoCardWrapper">
+            
+            <WeCard
+              icon={<ChartCandlestick />}
+              title="Property Valuation"
+              info=" All-inclusive real estate services to facilitate the easy and
+                confident purchase, sale, and management of your properties."
+            />
+
+            <WeCard
+              icon={<Building />}
+              title="Property Managment"
+              info=" All-inclusive real estate services to facilitate the easy and
+                confident purchase, sale, and management of your properties."
+            />
+
+            <WeCard
+              icon={<ChartCandlestick />}
+              title="Invest Opportunities"
+              info="All-inclusive real estate services to facilitate the easy and confident purchase, sale, and management of your properties."
+            />
+
+
           </div>
         </div>
       </div>

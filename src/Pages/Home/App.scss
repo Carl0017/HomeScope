@@ -2,12 +2,14 @@
 @import "../../Styles/fonts";
 @import "../../Styles/reuseable";
 
+
+
 .headTag {
   @include flex(row, 0, space-between);
   background: $brandPrimary;
   padding: 0.5rem 2rem;
   h4 {
-    @include Poppins(500, normal);
+    font-weight: 500;
     font-size: 0.8rem;
     text-transform: capitalize;
 
@@ -41,7 +43,7 @@
       @include flex(row, 0, space-between);
       width: 100%;
       padding: 1rem 8rem;
-      @include Poppins(400, normal);
+      
 
       ul {
         @include flex(row, 1rem, space-between);
@@ -57,7 +59,7 @@
 
       button {
         background: $dark;
-        @include Poppins(400, normal);
+        font-weight: 400;
         color: #fff;
         border: none;
         @include flex(row, 0.5rem, center);
@@ -98,7 +100,7 @@
     }
 
     p {
-      @include Poppins(400, normal);
+     font-weight: 400;
       width: 50%;
     }
 
@@ -107,7 +109,7 @@
 
       .filled {
         background: #fff;
-        @include Poppins(600, normal);
+       font-weight: 600;
         color: $dark;
         border: none;
         @include flex(row, 0.5rem, center);
@@ -140,7 +142,7 @@
 
       .outline {
         background: transparent;
-        @include Poppins(600, normal);
+        font-weight: 600;
         color: #fff;
         border: 2px solid #fff;
         @include flex(row, 0.5rem, center);
@@ -202,4 +204,58 @@
       }
     }
   }
+
+  .whatWeDo{
+    color: $dark;
+    margin-top: 1rem;
+    @include flex(column,.5rem, center);
+    font-weight: 500;
+    h2{
+      @include Montserrat(800);
+      font-size: 2rem;
+    }
+    p{
+      text-align: center;
+      width: 45%;
+    }
+
+    .weDoCardWrapper{
+      @include flex(row, 1rem, space-between);
+      margin-top: 2rem;
+      
+      .weDoCard{
+        background: #efefef;
+        color: $dark;
+        @include flex(column, 1rem, center);
+        width: 20rem;
+        padding: 1rem;
+        border-radius: .7rem;
+
+        span{
+          @include flex(row, 0, center);
+          background: #dfdede;
+          padding: 1rem;
+          border-radius: 10rem;
+
+          svg{
+            width: 2rem;
+            height: 2rem;
+            color: $dark;
+          }
+        }
+
+        h2{
+          font-size: 1rem;
+        }
+
+        p{
+          font-size: .8rem;
+          width: 100%;
+        }
+      }
+    }
+
+
+  }
+
 }
