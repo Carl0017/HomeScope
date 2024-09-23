@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
 import { Link } from "react-router-dom";
-import { ArrowBigRight, ArrowRight, Building, ChartCandlestick, X } from "lucide-react";
+import { ArrowBigRight, ArrowRight, Building, ChartCandlestick, Ellipsis, X } from "lucide-react";
 
 function HeadTag() {
   return (
@@ -121,14 +121,11 @@ function App() {
         <div className="whatWeDo">
           <h2>What we do ?</h2>
           <p>
-            We are a real estate firm with over 5+ years of expertise, and our
-            main goal is to provide amazing locations to our partners and
-            clients. Within the luxury real estate market, our agency offers
-            customized solutions.
+          With over 5 years of experience, we deliver prime locations and customized solutions in the luxury real estate market.
           </p>
 
           <div className="weDoCardWrapper">
-            
+
             <WeCard
               icon={<ChartCandlestick />}
               title="Property Valuation"
@@ -146,6 +143,12 @@ function App() {
             <WeCard
               icon={<ChartCandlestick />}
               title="Invest Opportunities"
+              info="All-inclusive real estate services to facilitate the easy and confident purchase, sale, and management of your properties."
+            />
+
+<WeCard
+              icon={<Ellipsis />}
+              title="And Many More"
               info="All-inclusive real estate services to facilitate the easy and confident purchase, sale, and management of your properties."
             />
 
