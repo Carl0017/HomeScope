@@ -55,13 +55,7 @@
       }
 
       button {
-        background: $dark;
-        font-weight: 400;
-        color: #fff;
-        border: none;
-        @include flex(row, 0.5rem, center);
-        padding: 0.6rem;
-        border-radius: 10rem;
+        @include defbutton($dark,#fff, .6rem);
 
         span {
           @include flex(row, 0, center);
@@ -105,13 +99,7 @@
       @include flex(row, 0.7rem, start);
 
       .filled {
-        background: #fff;
-        font-weight: 600;
-        color: $dark;
-        border: none;
-        @include flex(row, 0.5rem, center);
-        padding: 0.6rem;
-        border-radius: 10rem;
+        @include customButton(#fff, $dark, 0.6rem, none);
         transition: 0.3s ease-in-out;
 
         span {
@@ -138,13 +126,7 @@
       }
 
       .outline {
-        background: transparent;
-        font-weight: 600;
-        color: #fff;
-        border: 2px solid #fff;
-        @include flex(row, 0.5rem, center);
-        padding: 0.5rem;
-        border-radius: 10rem;
+        @include customButton(transparent, #fff, 0.6rem, 2px solid #fff);
         transition: 0.3s ease-in-out;
 
         span {
@@ -206,7 +188,6 @@
     color: $dark;
     margin-top: 1rem;
     @include flex(column, 0.5rem, center);
-    font-weight: 500;
     h2 {
       @include Montserrat(800);
       font-size: 2rem;
@@ -267,6 +248,54 @@
             background: #fff;
           }
         }
+      }
+    }
+  }
+
+  .availableProperties{
+    color: $dark;
+    margin-top: 1rem;
+    @include flex(column, 0.5rem, center);
+    font-weight: 500;
+    h2 {
+      @include Montserrat(800);
+      font-size: 2rem;
+    }
+    p {
+      text-align: center;
+      width: 60%;
+    }
+
+  }
+}
+
+
+.requestQuote{
+  background: #f3f2f2;
+  padding: 2rem;
+  .imageGalleryOne{
+    .galleryCard{
+      @include flex(row wrap, 2rem, center);
+      .cardHolder{
+        //background-image: url("../../assets/2-1.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 450px;
+        height: 300px;
+        border-radius: 2rem;
+      }
+    }
+
+    .quotes{
+      @include flex(column, 1rem, center);
+      h2{
+        text-align: center;
+        @include Poppins(700, normal);
+        font-size: 2rem;
+        width: 30%;
+      }
+      button{
+        @include defbutton($dark, #fff, .9rem 2.5rem);
       }
     }
   }

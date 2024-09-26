@@ -1,7 +1,22 @@
 import React from "react";
 import "./App.scss";
 import { Link } from "react-router-dom";
-import { ArrowBigRight, ArrowRight, Building, ChartCandlestick, Ellipsis, X } from "lucide-react";
+import {
+  ArrowBigRight,
+  ArrowRight,
+  Building,
+  ChartCandlestick,
+  Ellipsis,
+  X,
+} from "lucide-react";
+
+//quotes images
+import image1 from "../../assets/2-1.png";
+import image2 from "../../assets/2-2.png";
+import image3 from "../../assets/2-3.png";
+import image4 from "../../assets/2-4.png";
+import image5 from "../../assets/2-5.png";
+import image6 from "../../assets/2-6.png";
 
 function HeadTag() {
   return (
@@ -66,6 +81,14 @@ function WeCard(props) {
   );
 }
 
+function QuotesCard(props) {
+  return(
+    <>
+    <div className="cardHolder" style={{ backgroundImage: `url(${props.background})` }}></div>
+    </>
+  );
+}
+
 function App() {
   return (
     <>
@@ -121,11 +144,11 @@ function App() {
         <div className="whatWeDo">
           <h2>What we do ?</h2>
           <p>
-          With over 5 years of experience, we deliver prime locations and customized solutions in the luxury real estate market.
+            With over 5 years of experience, we deliver prime locations and
+            customized solutions in the luxury real estate market.
           </p>
 
           <div className="weDoCardWrapper">
-
             <WeCard
               icon={<ChartCandlestick />}
               title="Property Valuation"
@@ -146,13 +169,39 @@ function App() {
               info="All-inclusive real estate services to facilitate the easy and confident purchase, sale, and management of your properties."
             />
 
-<WeCard
+            <WeCard
               icon={<Ellipsis />}
               title="And Many More"
               info="All-inclusive real estate services to facilitate the easy and confident purchase, sale, and management of your properties."
             />
+          </div>
+        </div>
 
+        <div className="availableProperties">
+        <h2>Best Available Properties</h2>
+          <p>
+          We are a real estate firm with over 5 years of expertise, and our main goal is to provide amazing locations to our partners and clients
+          </p>
+        </div>
+      </div>
 
+      <div className="requestQuote">
+        <div className="imageGalleryOne">
+          <div className="galleryCard">
+            <QuotesCard background= {image1} />
+            <QuotesCard background= {image2} />
+            <QuotesCard background= {image3} />
+          </div>
+          <div className="quotes">
+            <h2>
+            Get In Touch Today To Get A Free Project Quote
+            </h2>
+            <button>Get In Touch</button>
+          </div>
+          <div className="galleryCard">
+            <QuotesCard background= {image4} />
+            <QuotesCard background= {image5} />
+            <QuotesCard background= {image6} />
           </div>
         </div>
       </div>
