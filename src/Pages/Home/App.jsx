@@ -82,9 +82,12 @@ function WeCard(props) {
 }
 
 function QuotesCard(props) {
-  return(
+  return (
     <>
-    <div className="cardHolder" style={{ backgroundImage: `url(${props.background})` }}></div>
+      <div
+        className="cardHolder"
+        style={{ backgroundImage: `url(${props.background})` }}
+      ></div>
     </>
   );
 }
@@ -178,9 +181,11 @@ function App() {
         </div>
 
         <div className="availableProperties">
-        <h2>Best Available Properties</h2>
+          <h2>Best Available Properties</h2>
           <p>
-          We are a real estate firm with over 5 years of expertise, and our main goal is to provide amazing locations to our partners and clients
+            We are a real estate firm with over 5 years of expertise, and our
+            main goal is to provide amazing locations to our partners and
+            clients
           </p>
         </div>
       </div>
@@ -188,20 +193,18 @@ function App() {
       <div className="requestQuote">
         <div className="imageGalleryOne">
           <div className="galleryCard">
-            <QuotesCard background= {image1} />
-            <QuotesCard background= {image2} />
-            <QuotesCard background= {image3} />
+            <QuotesCard background={image1} />
+            <QuotesCard background={image2} />
+            <QuotesCard background={image3} />
           </div>
           <div className="quotes">
-            <h2>
-            Get In Touch Today To Get A Free Project Quote
-            </h2>
+            <h2>Get In Touch Today To Get A Free Project Quote</h2>
             <button>Get In Touch</button>
           </div>
           <div className="galleryCard">
-            <QuotesCard background= {image4} />
-            <QuotesCard background= {image5} />
-            <QuotesCard background= {image6} />
+            <QuotesCard background={image4} />
+            <QuotesCard background={image5} />
+            <QuotesCard background={image6} />
           </div>
         </div>
       </div>

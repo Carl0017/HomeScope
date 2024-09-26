@@ -55,7 +55,7 @@
       }
 
       button {
-        @include defbutton($dark,#fff, .6rem);
+        @include defbutton($dark, #fff, 0.6rem);
 
         span {
           @include flex(row, 0, center);
@@ -209,7 +209,7 @@
         padding: 1rem;
         border-radius: 0.7rem;
         //box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-        transition: .5s ease-in-out;
+        transition: 0.5s ease-in-out;
 
         span {
           @include flex(row, 0, center);
@@ -234,17 +234,17 @@
           color: #888383;
         }
 
-        &:hover{
+        &:hover {
           background: $dark;
-          box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+          box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
           padding: 1.1rem;
-          margin-bottom: 1rem;
+          transform: translateY(-2rem);
 
-          h2{
+          h2 {
             color: #fff;
           }
 
-          span{
+          span {
             background: #fff;
           }
         }
@@ -252,7 +252,7 @@
     }
   }
 
-  .availableProperties{
+  .availableProperties {
     color: $dark;
     margin-top: 1rem;
     @include flex(column, 0.5rem, center);
@@ -265,18 +265,16 @@
       text-align: center;
       width: 60%;
     }
-
   }
 }
 
-
-.requestQuote{
+.requestQuote {
   background: #f3f2f2;
-  padding: 2rem;
-  .imageGalleryOne{
-    .galleryCard{
+  padding: 15rem 2rem;
+  .imageGalleryOne {
+    .galleryCard {
       @include flex(row wrap, 2rem, center);
-      .cardHolder{
+      .cardHolder {
         //background-image: url("../../assets/2-1.png");
         background-size: cover;
         background-repeat: no-repeat;
@@ -284,18 +282,27 @@
         height: 300px;
         border-radius: 2rem;
       }
+      // Move the middle card in the first gallery up by 2rem
+      &:nth-of-type(1) .cardHolder:nth-child(2) {
+        transform: translateY(-6rem);
+      }
+
+      // Move the middle card in the second gallery down by 2rem
+      &:nth-of-type(2) .cardHolder:nth-child(2) {
+        transform: translateY(67rem); // Moves the second image in second gallery card down
+      }
     }
 
-    .quotes{
+    .quotes {
       @include flex(column, 1rem, center);
-      h2{
+      h2 {
         text-align: center;
         @include Poppins(700, normal);
-        font-size: 2rem;
-        width: 30%;
+        font-size: 2.5rem;
+        width: 32%;
       }
-      button{
-        @include defbutton($dark, #fff, .9rem 2.5rem);
+      button {
+        @include defbutton($dark, #fff, 0.9rem 2.5rem);
       }
     }
   }
