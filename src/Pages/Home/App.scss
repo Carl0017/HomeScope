@@ -187,7 +187,7 @@
   .whatWeDo {
     color: $dark;
     margin-top: 1rem;
-    @include flex(column, 0.5rem, center);
+    @include flex(column wrap, 0.5rem, center);
     h2 {
       @include Montserrat(800);
       font-size: 2rem;
@@ -271,39 +271,71 @@
 .requestQuote {
   background: #f3f2f2;
   padding: 15rem 2rem;
+
   .imageGalleryOne {
     .galleryCard {
       @include flex(row wrap, 2rem, center);
+
       .cardHolder {
-        //background-image: url("../../assets/2-1.png");
         background-size: cover;
         background-repeat: no-repeat;
         width: 450px;
         height: 300px;
         border-radius: 2rem;
+        transition: transform 0.3s ease; // To visualize changes smoothly
       }
+
       // Move the middle card in the first gallery up by 2rem
-      &:nth-of-type(1) .cardHolder:nth-child(2) {
+      &:first-child .cardHolder:nth-child(2) {
         transform: translateY(-6rem);
       }
 
-      // Move the middle card in the second gallery down by 2rem
-      &:nth-of-type(2) .cardHolder:nth-child(2) {
-        transform: translateY(67rem); // Moves the second image in second gallery card down
+      // Move the middle card in the second gallery down by 6rem
+      &:last-child(2) .cardHolder:nth-child(2) {
+        transform: translateY(6rem);
       }
     }
 
     .quotes {
       @include flex(column, 1rem, center);
+
       h2 {
         text-align: center;
         @include Poppins(700, normal);
         font-size: 2.5rem;
         width: 32%;
       }
+
       button {
         @include defbutton($dark, #fff, 0.9rem 2.5rem);
       }
     }
   }
+}
+
+@media screen and (max-width:768px) {
+  
+  .headTag{
+    text-align: center;
+  }
+
+.pageWrapper{
+  padding: 1rem;
+  header{
+    display: none;
+  }
+
+ .mainCon{
+  padding: 2rem 1rem;
+
+  h2{
+    font-size: 1.8rem;
+    width: 100%;
+  }
+
+  p{
+    width:100%;
+  }
+ }
+}
 }
