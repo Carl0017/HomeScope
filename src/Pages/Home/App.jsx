@@ -201,7 +201,7 @@ function App() {
             <h2>Get In Touch Today To Get A Free Project Quote</h2>
             <button>Get In Touch</button>
           </div>
-          <div className= "galleryCard">
+          <div className="galleryCard">
             <QuotesCard background={image4} />
             <QuotesCard background={image5} />
             <QuotesCard background={image6} />

@@ -198,7 +198,7 @@
     }
 
     .weDoCardWrapper {
-      @include flex(row, 1rem, space-between);
+      @include flex(row wrap, 1rem, space-between);
       margin-top: 2rem;
 
       .weDoCard {
@@ -257,6 +257,7 @@
     margin-top: 1rem;
     @include flex(column, 0.5rem, center);
     font-weight: 500;
+    text-align: center;
     h2 {
       @include Montserrat(800);
       font-size: 2rem;
@@ -271,10 +272,12 @@
 .requestQuote {
   background: #f3f2f2;
   padding: 15rem 2rem;
+  
 
   .imageGalleryOne {
     .galleryCard {
-      @include flex(row wrap, 2rem, center);
+      @include flex(row, 2rem, center);
+      order: 1;
 
       .cardHolder {
         background-size: cover;
@@ -298,7 +301,7 @@
 
     .quotes {
       @include flex(column, 1rem, center);
-
+    
       h2 {
         text-align: center;
         @include Poppins(700, normal);
@@ -309,33 +312,79 @@
       button {
         @include defbutton($dark, #fff, 0.9rem 2.5rem);
       }
+
+      order: 2;
     }
   }
 }
 
-@media screen and (max-width:768px) {
-  
-  .headTag{
+@media screen and (max-width: 768px) {
+  .headTag {
     text-align: center;
   }
 
-.pageWrapper{
-  padding: 1rem;
-  header{
-    display: none;
-  }
+  .pageWrapper {
+    padding: 1rem;
+    header {
+      display: none;
+    }
 
- .mainCon{
-  padding: 2rem 1rem;
+    .mainCon {
+      padding: 2rem 1rem;
 
-  h2{
-    font-size: 1.8rem;
-    width: 100%;
-  }
+      h2 {
+        font-size: 1.8rem;
+        width: 100%;
+      }
 
-  p{
-    width:100%;
+      p {
+        width: 100%;
+      }
+    }
+
+    .ratings {
+      width: 100%;
+    }
+
+    .whatWeDo {
+      p {
+        width: 100%;
+        font-size: 0.8rem;
+      }
+      .weDoCardWrapper {
+        align-items: center;
+        margin: 0;
+
+        .weDoCard {
+          width: 100%;
+        }
+      }
+    }
+
+    .availableProperties {
+      p {
+        font-size: 0.8rem;
+        width: 100%;
+      }
+    }
+   
+    .requestQuote{
+      padding: 1rem;
+     .imageGalleryOne{
+      @include flex(column,1rem, space-between);
+
+      .quotes{
+        order: 1;
+        h2{
+          font-size: 1.5rem;
+          width: 100%;
+        }
+      }
+      .galleryCard{
+        order: 2;
+      }
+     }
+     
+    }
   }
- }
-}
 }
