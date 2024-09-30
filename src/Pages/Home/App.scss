@@ -271,7 +271,7 @@
 
 .requestQuote {
   background: #f3f2f2;
-  padding: 15rem 2rem;
+  padding: 12rem 2rem;
   
 
   .imageGalleryOne {
@@ -368,23 +368,37 @@
       }
     }
    
-    .requestQuote{
-      padding: 1rem;
-     .imageGalleryOne{
-      @include flex(column,1rem, space-between);
+  }
+  .requestQuote{
+    padding: 1rem;
+   .imageGalleryOne{
 
-      .quotes{
-        order: 1;
-        h2{
-          font-size: 1.5rem;
-          width: 100%;
-        }
+    .galleryCard{
+     @include flex(column,1rem, space-between);
+     margin-top: 1rem;
+
+      .cardHolder{
+        width:100%;
+        height: 200px;
+        border-radius: 1.3rem;
       }
-      .galleryCard{
-        order: 2;
+
+      &:first-child .cardHolder:nth-child(2) {
+        transform: translateY(0);
       }
-     }
-     
     }
+
+    .quotes{
+      //order: 1;
+      display:none;
+      h2{
+        font-size: 1.5rem;
+        width: 100%;
+      }
+    }
+    .galleryCard{
+      order: 2;
+    }
+   }
   }
 }
