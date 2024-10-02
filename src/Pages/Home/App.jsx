@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 import {
   ArrowBigRight,
   ArrowRight,
+  Bath,
+  BedSingle,
   Building,
   ChartCandlestick,
+  DoorOpen,
   Ellipsis,
+  MapPin,
   X,
 } from "lucide-react";
 
@@ -88,6 +92,50 @@ function QuotesCard(props) {
         className="cardHolder"
         style={{ backgroundImage: `url(${props.background})` }}
       ></div>
+    </>
+  );
+}
+
+function AvailableCard(props) {
+  return (
+    <>
+      <div className="availableCard">
+        <div
+          className="bgWrapper"
+          style={{ backgroundImage: `url(${props.BackgroundImage})` }}
+        />
+        <div className="cardHead">
+          <h2>{props.Title}</h2>
+          <p>{props.Info}</p>
+        </div>
+
+        <div className="extraInfo">
+          <span>
+            <DoorOpen />
+            <p>{props.doorNumber} Rooms</p>
+          </span>
+
+          <span>
+            <BedSingle />
+            <p>{props.rooms} Bedrooms</p>
+          </span>
+
+          <span>
+            <Bath />
+            <p>{props.showers} Showers</p>
+          </span>
+
+          <span>
+            <MapPin />
+            <p>{props.location}</p>
+          </span>
+        </div>
+
+        <div className="bottomCon">
+          <h3>Ghc {props.priceTag}</h3>
+          <button>Details</button>
+        </div>
+      </div>
     </>
   );
 }
@@ -187,6 +235,52 @@ function App() {
             main goal is to provide amazing locations to our partners and
             clients
           </p>
+
+          <div className="availableWrapper">
+            <AvailableCard
+              BackgroundImage={image1}
+              Title="Alpina House"
+              Info="voluptatem accusantium dolorem"
+              doorNumber="4"
+              rooms="4"
+              showers="4"
+              location="McCarthy"
+              priceTag="1,960"
+            />
+
+            <AvailableCard
+              BackgroundImage={image2}
+              Title="Villa Archetype"
+              Info="voluptatem accusantium dolorem"
+              doorNumber="3"
+              rooms="3"
+              showers="2"
+              location="East Legon"
+              priceTag="1,360"
+            />
+
+            <AvailableCard
+              BackgroundImage={image3}
+              Title="Apartments Auckland"
+              Info="voluptatem accusantium dolorem"
+              doorNumber="2"
+              rooms="2"
+              showers="1"
+              location="Tema"
+              priceTag="798.00"
+            />
+
+            <AvailableCard
+              BackgroundImage={image4}
+              Title="Apartments Auckland"
+              Info="voluptatem accusantium dolorem"
+              doorNumber="1"
+              rooms="1"
+              showers="1"
+              location="Madina"
+              priceTag="499.22"
+            />
+          </div>
         </div>
       </div>
 

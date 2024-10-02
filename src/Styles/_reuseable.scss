@@ -6,13 +6,13 @@
     gap: $gap;
 }
 
-@mixin defbutton($background,  $color, $padding){
+@mixin defbutton($background,  $color, $padding, $radius){
     background: $background;
     color: $color;
     border: none;
     @include flex(row, 0.5rem, center);
     padding: $padding;
-    border-radius: 10rem;
+    border-radius: $radius;
 }
 
 @mixin customButton($background,$color, $padding, $border){
