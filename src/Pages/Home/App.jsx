@@ -112,17 +112,17 @@ function AvailableCard(props) {
         <div className="extraInfo">
           <span>
             <DoorOpen />
-            <p>{props.doorNumber} Rooms</p>
+            <p>{props.doorNumber} Room(s)</p>
           </span>
 
           <span>
             <BedSingle />
-            <p>{props.rooms} Bedrooms</p>
+            <p>{props.rooms} Bedroom(s)</p>
           </span>
 
           <span>
             <Bath />
-            <p>{props.showers} Showers</p>
+            <p>{props.showers} Shower(s)</p>
           </span>
 
           <span>

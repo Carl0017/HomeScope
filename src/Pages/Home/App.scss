@@ -382,6 +382,7 @@
     .quotes {
       @include flex(column, 1rem, center);
 
+  
       h2 {
         text-align: center;
         @include Poppins(700, normal);
@@ -393,7 +394,7 @@
         @include defbutton($dark, #fff, 0.9rem 2.5rem, 10rem);
       }
 
-      order: 2;
+      //order: 2;
     }
   }
 }
@@ -441,10 +442,17 @@
       }
     }
 
+
     .availableProperties {
       p {
         font-size: 0.8rem;
         width: 100%;
+      }
+
+      .availableWrapper{
+        .availableCard{
+          width: 100%;
+        }
       }
     }
   }
