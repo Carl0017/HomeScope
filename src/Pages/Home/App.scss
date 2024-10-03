@@ -32,31 +32,40 @@
 .pageWrapper {
   @include flex(column, 2rem, center);
   padding: 1rem 8rem;
+ }
 
-  header {
-    @include flex(row, 3rem, center);
+  .navWrapper {
+    position: relative;
+    z-index: 1000; 
     width: 100%;
-
-    nav {
-      @include flex(row, 0, space-between);
-      width: 100%;
-      padding: 1rem 8rem;
-
-      ul {
-        @include flex(row, 1rem, space-between);
-        li {
-          list-style: none;
-          font-weight: 500;
-          a {
-            text-decoration: none;
-            color: $dark;
-          }
-        }
+    @include flex(row, 2rem, space-between);
+    align-items: center;
+    padding: 1rem 1rem;
+  
+    .logo {
+      @include Montserrat(700);
+      font-size: 1.2rem;
+    }
+  
+    .nav-elements ul {
+      @include flex(row, 2rem, space-between);
+  
+      li {
+        list-style: none;
+        text-decoration: none;
+        color: $dark;
+        @include Montserrat(600);
       }
-
-      button {
+  
+      #active {
+        font-weight: 650;
+        color: $brandPrimary;
+      }
+   
+      .navbrandBtn {
         @include defbutton($dark, #fff, 0.6rem, 10rem);
-
+        display: none;
+        
         span {
           @include flex(row, 0, center);
           background: #fff;
@@ -68,6 +77,25 @@
           }
         }
       }
+    }
+  
+    .brandBtn {
+      @include defbutton($dark, #fff, 0.6rem, 10rem);
+      span {
+        @include flex(row, 0, center);
+        background: #fff;
+        color: #000;
+        border-radius: 10rem;
+        svg {
+          width: 1.3rem;
+          height: 1.3rem;
+        }
+      }
+    }
+  
+    #menu-icon {
+      display: none;
+      color: $dark;
     }
   }
 
@@ -364,7 +392,7 @@
       }
     }
   }
-}
+
 
 .requestQuote {
   background: #f3f2f2;
@@ -419,6 +447,63 @@
 }
 
 @media screen and (max-width: 768px) {
+
+.navWrapper {
+      @include flex(row, .5rem, space-between);
+      padding: 1rem;
+
+      .logo {
+        #logo_Main{
+          width: 100px;
+        }
+      }
+  
+      .nav-elements {
+        position: absolute;
+        right: 0;
+        top: 60px;
+        background-color: #fff;
+        width: 0;
+        height: calc(100vh - 60px);
+        transition: all 0.3s ease-in;
+        overflow: hidden;
+      }
+  
+      .nav-elements.active {
+        width: 100%;
+      }
+  
+      .nav-elements ul {
+        display: flex;
+        flex-direction: column;
+  
+        li {
+          margin-right: unset;
+          font-weight: 500;
+          margin-top: 22px;
+          a {
+            text-decoration: none;
+            color: $dark;
+          }
+        }
+  
+        .navbrandBtn {
+          display: flex;
+
+
+        }
+      }
+  
+      .brandBtn {
+        display: none;
+      }
+  
+      #menu-icon {
+        display: block;
+        cursor: pointer;
+      }
+    }
+
   .headTag {
     text-align: center;
   }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.scss";
 import { Link } from "react-router-dom";
 import {
+  AlignRight,
   ArrowBigRight,
   ArrowRight,
   Bath,
@@ -41,34 +42,79 @@ function HeadTag({ closeHead }) {
 }
 
 function Navbar() {
+  const [showNavbar, setShowNavbar] = useState(false);
+
+  const handleShowNavbar = () => {
+    setShowNavbar(!showNavbar);
+  };
   return (
     <>
-      <header>
-        <nav>
-          <div className="logo">HomeScope</div>
-          <ul>
-            <li>
-              <Link to="#">Home</Link>
-            </li>
-            <li>
-              <Link to="#">About Us</Link>
-            </li>
-            <li>
-              <Link to="#">Properties</Link>
-            </li>
-            <li>
-              <Link to="#">Services</Link>
-            </li>
-          </ul>
 
-          <button>
-            Contact Us
+      <>
+        <div className="navWrapper">
+          <div className="logo">HomeScope</div>
+          <nav>
+            <div className={`nav-elements ${showNavbar && "active"}`}>
+              <ul>
+                <li>
+                  <Link
+                    to="/"
+                    style={{ color: "#222831", textDecoration: "none" }}
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/"
+                    style={{ color: "#222831", textDecoration: "none" }}
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/"
+                    style={{ color: "#222831", textDecoration: "none" }}
+                  >
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/"
+                    style={{ color: "#222831", textDecoration: "none" }}
+                  >
+                    Properties
+                  </Link>
+                </li>
+                <button className="navbrandBtn">
+                  <Link
+                    to="/Login"
+                    style={{ color: "#fff", textDecoration: "none" }}
+                  >
+                    Contact Us
+                  </Link>
+                  <span>
+              <ArrowRight />
+            </span>
+                </button>
+              </ul>
+            </div>
+          </nav>
+          <button className="brandBtn">
+            <Link to="/Login" style={{ color: "#fff", textDecoration: "none" }}>
+              Contact Us
+            </Link>
             <span>
               <ArrowRight />
             </span>
           </button>
-        </nav>
-      </header>
+          <div id="menu-icon" onClick={handleShowNavbar}>
+            <AlignRight />
+          </div>
+        </div>
+      </>
     </>
   );
 }
@@ -271,7 +317,7 @@ function App() {
 
             <AvailableCard
               BackgroundImage={image3}
-              Title="Apartments Auckland"
+              Title="Auckland Apartment"
               Info="voluptatem accusantium dolorem"
               doorNumber="2"
               rooms="2"
@@ -282,7 +328,7 @@ function App() {
 
             <AvailableCard
               BackgroundImage={image4}
-              Title="Apartments Auckland"
+              Title="Vally View Apartment"
               Info="voluptatem accusantium dolorem"
               doorNumber="1"
               rooms="1"
