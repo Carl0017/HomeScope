@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.scss";
 import { Link } from "react-router-dom";
 import {
@@ -22,7 +22,7 @@ import image4 from "../../assets/2-4.png";
 import image5 from "../../assets/2-5.png";
 import image6 from "../../assets/2-6.png";
 
-function HeadTag() {
+function HeadTag({ closeHead }) {
   return (
     <>
       <div className="headTag">
@@ -32,7 +32,7 @@ function HeadTag() {
           <Link to="/">learn more</Link>
         </h4>
 
-        <div className="closeBtn">
+        <div className="closeBtn" onClick={closeHead}>
           <X />
         </div>
       </div>
@@ -141,38 +141,44 @@ function AvailableCard(props) {
 }
 
 function App() {
+  const [isVisible, setIsVisible] = useState(true);
+
+  const closeHead = () => {
+    setIsVisible(false);
+  };
+
   return (
     <>
-      <HeadTag />
+      {isVisible && <HeadTag closeHead={closeHead} />}
+
       <div className="pageWrapper">
         <Navbar />
 
         <div className="mainCon">
-        <div className="overlay"></div>
-         <div className="mainWrapper">
-         <h2>Discover Your Dream Property With HomeScope</h2>
-          <p>
-            This exclusive residential complex offers 13 living units with
-            carefully designed and optimally tailored floor plans.
-          </p>
+          <div className="overlay"></div>
+          <div className="mainWrapper">
+            <h2>Discover Your Dream Property With HomeScope</h2>
+            <p>
+              This exclusive residential complex offers 13 living units with
+              carefully designed and optimally tailored floor plans.
+            </p>
 
-          <div className="buttonWrapper">
-            <button className="filled">
-              Browse Properties
-              <span>
-                <ArrowRight />
-              </span>
-            </button>
+            <div className="buttonWrapper">
+              <button className="filled">
+                Browse Properties
+                <span>
+                  <ArrowRight />
+                </span>
+              </button>
 
-            <button className="outline">
-              Learn More
-              <span>
-                <ArrowRight />
-              </span>
-            </button>
+              <button className="outline">
+                Learn More
+                <span>
+                  <ArrowRight />
+                </span>
+              </button>
+            </div>
           </div>
-         </div>
-          
         </div>
 
         <div className="ratings">
@@ -289,11 +295,10 @@ function App() {
       </div>
 
       <div className="requestQuote">
-
-          <div className="mobileTitle">
-            <h2>Get In Touch Today To Get A Free Project Quote</h2>
-            <button>Get In Touch</button>
-          </div>
+        <div className="mobileTitle">
+          <h2>Get In Touch Today To Get A Free Project Quote</h2>
+          <button>Get In Touch</button>
+        </div>
 
         <div className="imageGalleryOne">
           <div className="galleryCard">
