@@ -148,7 +148,9 @@ function App() {
         <Navbar />
 
         <div className="mainCon">
-          <h2>Discover Your Dream Property With HomeScope</h2>
+        <div className="overlay"></div>
+         <div className="mainWrapper">
+         <h2>Discover Your Dream Property With HomeScope</h2>
           <p>
             This exclusive residential complex offers 13 living units with
             carefully designed and optimally tailored floor plans.
@@ -169,6 +171,8 @@ function App() {
               </span>
             </button>
           </div>
+         </div>
+          
         </div>
 
         <div className="ratings">
@@ -285,6 +289,12 @@ function App() {
       </div>
 
       <div className="requestQuote">
+
+          <div className="mobileTitle">
+            <h2>Get In Touch Today To Get A Free Project Quote</h2>
+            <button>Get In Touch</button>
+          </div>
+
         <div className="imageGalleryOne">
           <div className="galleryCard">
             <QuotesCard background={image1} />
