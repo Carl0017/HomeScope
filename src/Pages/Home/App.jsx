@@ -23,6 +23,7 @@ import image3 from "../../assets/2-3.png";
 import image4 from "../../assets/2-4.png";
 import image5 from "../../assets/2-5.png";
 import image6 from "../../assets/2-6.png";
+import Icon from "../../assets/about.png";
 
 function HeadTag({ closeHead }) {
   return (
@@ -187,30 +188,32 @@ function AvailableCard(props) {
 }
 
 function ReviewCard(props) {
-  return(
+  return (
     <>
-    <div className="reviewCard">
-      <div className="cardHead">{props.Id}</div>
-      <div className="cardBody">
-        <span className="starWrapper">
-          <Star />
-          <Star />
-          <Star />
-          <Star />
-          <Star />
-        </span>
+      <div className="reviewCard">
+        <div className="cardHead">{props.Id}</div>
+        <div className="cardBody">
+          <span className="starWrapper">
+            <Star />
+            <Star />
+            <Star />
+            <Star />
+            <Star />
+          </span>
+          <h3>{props.Testimonial}</h3>
+        </div>
+        <div className="divider"></div>
 
-        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In fugiat delectus perspiciatis sed harum veritatis quo.</h3>
+        <div className="cardBottom">
+          <img src={props.Icon} alt="" />
+          <span>
+            <h1>{props.Name}</h1>
+            <p> {props.Role}</p>
+          </span>
+        </div>
       </div>
-
-      <div className="divider"></div>
-
-      <div className="cardBottom">
-        
-      </div>
-    </div>
     </>
-  )
+  );
 }
 
 function App() {
@@ -395,14 +398,43 @@ function App() {
         <h4>TESTIMONIAL</h4>
         <h1>What Our Happy Clients Says</h1>
 
-      <div className="testimonialCardWrapper">
-        <ReviewCard Id="01" />
-        <ReviewCard Id="02" />
-        <ReviewCard Id="03" />
-        <ReviewCard Id="04" />
-
-      </div>
+        <div className="testimonialCardWrapper">
+          <ReviewCard
+            Id="01"
+            Testimonial="Lorem ipsum dolor sit amet consectetur, adipisicing elit. In fugiat
+            delectus perspiciatis sed harum veritatis quo."
+            Icon={Icon}
+            Name="Carl Stanley"
+            Role="CTO Universal"
+          />
+          <ReviewCard
+            Id="02"
+            Testimonial="Lorem ipsum dolor sit amet consectetur, adipisicing elit. In fugiat
+            delectus perspiciatis sed harum veritatis quo."
+            Icon={Icon}
+            Name="Emmanuel"
+            Role="Ceo Universal"
+          />
+          <ReviewCard
+            Id="03"
+            Testimonial="Lorem ipsum dolor sit amet consectetur, adipisicing elit. In fugiat
+            delectus perspiciatis sed harum veritatis quo."
+            Icon={Icon}
+            Name="Ida Quartey"
+            Role="Systems Admin"
+          />
+          <ReviewCard
+            Id="04"
+            Testimonial="Lorem ipsum dolor sit amet consectetur, adipisicing elit. In fugiat
+            delectus perspiciatis sed harum veritatis quo."
+            Icon={Icon}
+            Name="John Doe"
+            Role="Chief Security"
+          />
         </div>
+
+        <button>View More</button>
+      </div>
     </>
   );
 }
