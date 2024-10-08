@@ -694,6 +694,10 @@
     .testimonialCardWrapper{
       margin-top: 1.5rem;
       gap: 2rem;
+
+      .reviewCard{
+        width: 100%;
+      }
     }
   }
 }
