@@ -12,6 +12,7 @@ import {
   DoorOpen,
   Ellipsis,
   MapPin,
+  Star,
   X,
 } from "lucide-react";
 
@@ -189,7 +190,24 @@ function ReviewCard(props) {
   return(
     <>
     <div className="reviewCard">
-      {/*code for the review card will be here*/}
+      <div className="cardHead">{props.Id}</div>
+      <div className="cardBody">
+        <span className="starWrapper">
+          <Star />
+          <Star />
+          <Star />
+          <Star />
+          <Star />
+        </span>
+
+        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In fugiat delectus perspiciatis sed harum veritatis quo.</h3>
+      </div>
+
+      <div className="divider"></div>
+
+      <div className="cardBottom">
+        
+      </div>
     </div>
     </>
   )
@@ -375,9 +393,16 @@ function App() {
 
       <div className="testimonials">
         <h4>TESTIMONIAL</h4>
-
         <h1>What Our Happy Clients Says</h1>
+
+      <div className="testimonialCardWrapper">
+        <ReviewCard Id="01" />
+        <ReviewCard Id="02" />
+        <ReviewCard Id="03" />
+        <ReviewCard Id="04" />
+
       </div>
+        </div>
     </>
   );
 }

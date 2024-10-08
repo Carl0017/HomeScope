@@ -462,6 +462,56 @@
     text-align: center;
     font-size: 2.5rem;
   }
+
+  .testimonialCardWrapper{
+    @include flex(row wrap, 1rem ,space-between);
+    .reviewCard{
+      position: relative;
+      width: 340px;
+      padding: 3rem 1rem 1rem 1rem;
+      background: transparent;
+      border: 1px solid #f3f2f2;
+      border-radius: .5rem;
+
+      .cardHead{
+        position: absolute;
+        top: -20px;
+        border-radius: 10rem;
+        background: $dark;
+        width: fit-content;
+        padding: .8rem;
+        text-align: center;
+        color: #fff;
+        @include Montserrat(500);
+      }
+
+      .cardBody{
+        @include flex(column, .5rem, space-between);
+        align-items: flex-start;
+
+        .starWrapper{
+            svg{
+              width: 1rem;
+              height: 1rem;
+            }
+        }
+
+        h3{
+          font-size: .8rem;
+          text-align: left;
+          font-weight: 400;
+        }
+      }
+
+      .divider{
+        position: absolute;
+        left: 0;
+        background: #f3f2f2;
+        width: 100%;
+        height: 1px;
+      }
+    }
+  }
 }
 
 
