@@ -49,7 +49,6 @@ function Navbar() {
   };
   return (
     <>
-
       <>
         <div className="navWrapper">
           <div className="logo">HomeScope</div>
@@ -96,8 +95,8 @@ function Navbar() {
                     Contact Us
                   </Link>
                   <span>
-              <ArrowRight />
-            </span>
+                    <ArrowRight />
+                  </span>
                 </button>
               </ul>
             </div>
@@ -184,6 +183,16 @@ function AvailableCard(props) {
       </div>
     </>
   );
+}
+
+function ReviewCard(props) {
+  return(
+    <>
+    <div className="reviewCard">
+      {/*code for the review card will be here*/}
+    </div>
+    </>
+  )
 }
 
 function App() {
@@ -362,6 +371,12 @@ function App() {
             <QuotesCard background={image6} />
           </div>
         </div>
+      </div>
+
+      <div className="testimonials">
+        <h4>TESTIMONIAL</h4>
+
+        <h1>What Our Happy Clients Says</h1>
       </div>
     </>
   );
