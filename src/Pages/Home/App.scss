@@ -34,71 +34,6 @@
   padding: 1rem 8rem;
  }
 
-  .navWrapper {
-    position: relative;
-    z-index: 1000; 
-    width: 100%;
-    @include flex(row, 2rem, space-between);
-    align-items: center;
-    padding: 1rem 1rem;
-  
-    .logo {
-      @include Montserrat(700);
-      font-size: 1.2rem;
-    }
-  
-    .nav-elements ul {
-      @include flex(row, 2rem, space-between);
-  
-      li {
-        list-style: none;
-        text-decoration: none;
-        color: $dark;
-        @include Montserrat(600);
-      }
-  
-      #active {
-        font-weight: 650;
-        color: $brandPrimary;
-      }
-   
-      .navbrandBtn {
-        @include defbutton($dark, #fff, 0.6rem, 10rem);
-        display: none;
-        
-        span {
-          @include flex(row, 0, center);
-          background: #fff;
-          color: #000;
-          border-radius: 10rem;
-          svg {
-            width: 1.3rem;
-            height: 1.3rem;
-          }
-        }
-      }
-    }
-  
-    .brandBtn {
-      @include defbutton($dark, #fff, 0.6rem, 10rem);
-      span {
-        @include flex(row, 0, center);
-        background: #fff;
-        color: #000;
-        border-radius: 10rem;
-        svg {
-          width: 1.3rem;
-          height: 1.3rem;
-        }
-      }
-    }
-  
-    #menu-icon {
-      display: none;
-      color: $dark;
-    }
-  }
-
   .mainCon {
     position: relative;
     @include flex(column, 1rem, flex-end);
@@ -406,7 +341,7 @@
     .galleryCard {
       @include flex(row, 2rem, center);
       order: 1;
-
+  
       .cardHolder {
         background-size: cover;
         background-repeat: no-repeat;
@@ -415,35 +350,34 @@
         border-radius: 2rem;
         transition: transform 0.3s ease; // To visualize changes smoothly
       }
-
-      // Move the middle card in the first gallery up by 2rem
-      &:first-child .cardHolder:nth-child(2) {
+  
+      // Move the middle card in the first .galleryCard up
+      &:nth-of-type(1) .cardHolder:nth-child(2) {
         transform: translateY(-6rem);
       }
-
-      // Move the middle card in the second gallery down by 6rem
-      &:last-child(2) .cardHolder:nth-child(2) {
+  
+      // Move the middle card in the second .galleryCard down
+      &:nth-of-type(2) .cardHolder:nth-child(2) {
         transform: translateY(6rem);
       }
     }
-
+  
     .quotes {
       @include flex(column, 1rem, center);
-
+  
       h2 {
         text-align: center;
         @include Poppins(700, normal);
         font-size: 2.5rem;
         width: 32%;
       }
-
+  
       button {
         @include defbutton($dark, #fff, 0.9rem 2.5rem, 10rem);
       }
-
-      //order: 2;
     }
   }
+  
 }
 
 
@@ -549,62 +483,6 @@
 
 
 @media screen and (max-width: 768px) {
-
-.navWrapper {
-      @include flex(row, .5rem, space-between);
-      padding: 1rem;
-
-      .logo {
-        #logo_Main{
-          width: 100px;
-        }
-      }
-  
-      .nav-elements {
-        position: absolute;
-        right: 0;
-        top: 60px;
-        background-color: #fff;
-        width: 0;
-        height: calc(100vh - 60px);
-        transition: all 0.3s ease-in;
-        overflow: hidden;
-      }
-  
-      .nav-elements.active {
-        width: 100%;
-      }
-  
-      .nav-elements ul {
-        display: flex;
-        flex-direction: column;
-  
-        li {
-          margin-right: unset;
-          font-weight: 500;
-          margin-top: 22px;
-          a {
-            text-decoration: none;
-            color: $dark;
-          }
-        }
-  
-        .navbrandBtn {
-          display: flex;
-
-
-        }
-      }
-  
-      .brandBtn {
-        display: none;
-      }
-  
-      #menu-icon {
-        display: block;
-        cursor: pointer;
-      }
-    }
 
   .headTag {
     text-align: center;

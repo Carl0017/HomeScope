@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.scss";
-import { Link } from "react-router-dom";
+import {Link } from "react-router-dom"
 import {
   AlignRight,
   ArrowBigRight,
@@ -15,6 +15,7 @@ import {
   Star,
   X,
 } from "lucide-react";
+import Navbar from "../../Components/Navbar/app";
 
 //quotes images
 import image1 from "../../assets/2-1.png";
@@ -23,6 +24,8 @@ import image3 from "../../assets/2-3.png";
 import image4 from "../../assets/2-4.png";
 import image5 from "../../assets/2-5.png";
 import image6 from "../../assets/2-6.png";
+
+
 import Icon from "../../assets/about.png";
 
 function HeadTag({ closeHead }) {
@@ -43,82 +46,7 @@ function HeadTag({ closeHead }) {
   );
 }
 
-function Navbar() {
-  const [showNavbar, setShowNavbar] = useState(false);
 
-  const handleShowNavbar = () => {
-    setShowNavbar(!showNavbar);
-  };
-  return (
-    <>
-      <>
-        <div className="navWrapper">
-          <div className="logo">HomeScope</div>
-          <nav>
-            <div className={`nav-elements ${showNavbar && "active"}`}>
-              <ul>
-                <li>
-                  <Link
-                    to="/"
-                    style={{ color: "#222831", textDecoration: "none" }}
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/"
-                    style={{ color: "#222831", textDecoration: "none" }}
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/"
-                    style={{ color: "#222831", textDecoration: "none" }}
-                  >
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/"
-                    style={{ color: "#222831", textDecoration: "none" }}
-                  >
-                    Properties
-                  </Link>
-                </li>
-                <button className="navbrandBtn">
-                  <Link
-                    to="/Login"
-                    style={{ color: "#fff", textDecoration: "none" }}
-                  >
-                    Contact Us
-                  </Link>
-                  <span>
-                    <ArrowRight />
-                  </span>
-                </button>
-              </ul>
-            </div>
-          </nav>
-          <button className="brandBtn">
-            <Link to="/Login" style={{ color: "#fff", textDecoration: "none" }}>
-              Contact Us
-            </Link>
-            <span>
-              <ArrowRight />
-            </span>
-          </button>
-          <div id="menu-icon" onClick={handleShowNavbar}>
-            <AlignRight />
-          </div>
-        </div>
-      </>
-    </>
-  );
-}
 
 function WeCard(props) {
   return (
